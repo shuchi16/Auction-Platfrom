@@ -1,0 +1,141 @@
+/* --- Global Resets --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+/* --- Layout Containers --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.form-container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 90%; /* Ensures it shrinks on mobile */
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e1e8ed;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 15px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* --- Buttons & Inputs --- */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary { background: #007BFF; color: white; }
+.btn-success { background: #28A745; color: white; }
+.btn-danger { background: #DC3545; color: white; }
+.btn-warning { background: #FFC107; color: black; display: block; width: 100%; margin-top: 15px;}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* --- Dashboard Grid --- */
+.auction-grid {
+  display: grid;
+  /* This is the magic responsive line: it creates as many 280px columns as will fit */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.auction-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- Live Room Specifics --- */
+.live-room-box {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.bid-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* === MOBILE MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .live-room-box {
+    padding: 20px;
+  }
+
+  .bid-controls {
+    flex-direction: column; /* Stacks input and button on phones */
+    width: 100%;
+  }
+  
+  .bid-controls input, .bid-controls button {
+    width: 100%;
+  }
+
+  h1 { font-size: 1.8rem; }
+  .current-price-display { font-size: 3rem !important; }
+}
