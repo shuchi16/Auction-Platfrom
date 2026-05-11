@@ -18,7 +18,7 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchAuctions = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/auctions');
+                const response = await fetch('https://auction-platfrom-ft07.onrender.com/api/auctions');
                 const data = await response.json();
                 setAuctions(data);
                 setLoading(false);

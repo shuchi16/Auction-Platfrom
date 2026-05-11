@@ -18,7 +18,7 @@ export default function Register() {
         e.preventDefault();
         try {
             // Send data to our Node backend
-            const response = await fetch('http://localhost:5000/api/auth/register', {
+            const response = await fetch('https://auction-platfrom-ft07.onrender.com/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -38,7 +38,7 @@ export default function Register() {
     };
 
     return (
-        <div style={{ maxWidth: '400px', margin: '50px auto', fontFamily: 'sans-serif' }}>
+        <div className="form-container">
             <h2>Create an Account</h2>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             

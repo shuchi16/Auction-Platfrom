@@ -31,7 +31,7 @@ export default function CreateAuction() {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch('http://localhost:5000/api/auctions', {
+            const response = await fetch('https://auction-platfrom-ft07.onrender.com/api/auctions', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',

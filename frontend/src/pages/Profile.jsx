@@ -19,7 +19,7 @@ export default function Profile() {
             }
 
             try {
-                const response = await fetch('http://localhost:5000/api/users/profile', {
+                const response = await fetch('https://auction-platfrom-ft07.onrender.com/api/users/profile', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }

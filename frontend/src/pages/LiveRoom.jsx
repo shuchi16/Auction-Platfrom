@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { io } from 'socket.io-client';
 
 // 1. Establish the connection to the backend
-const socket = io('http://localhost:5000');
+const socket = io('https://auction-platfrom-ft07.onrender.com');
 
 export default function LiveRoom() {
     const { id } = useParams(); // Gets the auction ID from the URL
@@ -19,7 +19,7 @@ export default function LiveRoom() {
         // 2. Fetch the initial auction data via traditional REST API
         const fetchAuction = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/auctions/${id}`);
+                const response = await fetch(`https://auction-platfrom-ft07.onrender.com/api/auctions/${id}`);
                 const data = await response.json();
                 setAuction(data);
             } catch (err) {
