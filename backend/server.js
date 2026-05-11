@@ -28,7 +28,7 @@ const server = http.createServer(app);
 // Setup Socket.io
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // This is Vite's default React port
+        origin: "*", // This is Vite's default React port
         methods: ["GET", "POST"]
     }
 });
